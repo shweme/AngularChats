@@ -1,0 +1,32 @@
+{
+    "0":
+    {
+        "name":"general",
+        "group":"UQCS"
+    },
+    "1":
+    {
+        "name":"food",
+        "group":"UQCS"
+    },
+    "2":
+    {
+        "name":"banter",
+        "group":"UQCS"
+    },
+    "3":
+    {
+        "name":"clayfieldwk3",
+        "group":"CodeCampAU"
+    },
+    "4":
+    {
+        "name":"general",
+        "group":"CodeCampAU"
+    },
+    "5":
+    {
+        "name":"general",
+        "group":"ABA Design"
+    }
+}
