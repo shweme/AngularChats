@@ -1,22 +1,25 @@
 {
     "users":
     {
-        "super":
+        "0":
         {
+            "name":"super",
             "email":"null@void", 
             "pwd":"Sup3r", 
             "valid":"true", 
             "isGroupAdmin":"SUPER"
         },
-        "shweta":
+        "1":
         {
+            "name":"shweme",
             "email":"shmehta2111@gmail.com",
             "pwd":"Shw3t@",
             "valid":"false",
             "isGroupAdmin":"GROUP"
         },
-        "neily":
+        "2":
         {
+            "name":"neily",
             "email":"neil@ashford.com",
             "pwd":"@rtemis",
             "valid":"false",
