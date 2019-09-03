@@ -1,17 +1,18 @@
-<body id="AccPage">
-<div style="text-align:center"> <!--style="text-align:center">-->
-<h1>
-    {{username}}'s account
-</h1>
+
+<div class="grid-container has-bg">
+    <div class="grid-container sidebar">
+        <h1 style="text-align:center">{{username}}'s account</h1>
+        <img height="100%" width="100%" alt="GoogleDoggo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDVQsMtPh2VicuzciRqUCtiBSW9SUSfRLjI4F7-rYIp8r_4cR_ng">
+        <div class="grid-container sidebar-child">
+            <ul class="nav navbar-nav navbar-default">
+                <li><a class="nav-child">Email</a></li>
+                <li><a class="nav-child" routerLink="/chat">Go To Chat</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="grid-container group">
+        <ul class="list-group">
+            <li></li>
+        </ul>
+    </div>
 </div>
-<div>
-<nav>
-    <ul class="nav navbar-nav navbar-default">
-        <img height="200" width="200" alt="GoogleDoggo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDVQsMtPh2VicuzciRqUCtiBSW9SUSfRLjI4F7-rYIp8r_4cR_ng">
-        <li> <a class="nav-child">Email</a></li>
-        <li> <a class="nav-child" routerLink="/chat">Chat</a></li>
-    </ul>
-</nav>
-</div>
-<router-outlet></router-outlet>
-</body>

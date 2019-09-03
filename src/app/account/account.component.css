@@ -1,10 +1,21 @@
-body#AccPage{
-    background-image:url("https://www.muralsyourway.com/media/catalog/product/cache/1/base/1200x/040ec09b1e35df139433887a97daa66f/r/f/rf9967533_illustration_of_a_starry_sky_night_scene_copy.jpg");
+.has-bg{
+    background-image:url("../sky.jpg");
     background-repeat:no-repeat;
     background-position:center;
     background-size:cover;
+}
+
+.grid-container{
     padding:10px;
-    color:#fff
+    color:#fff;
+    display: flex;
+    flex-direction:row;
+}
+
+.sidebar{
+    align-items:center;
+    display: flex;
+    flex-direction:column;
 }
 
 .nav.navbar-nav.navbar-default{
