@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ UID = "";
 pwd = "";
 emails = ["Shweme", "Witchell", "Alien"];
 passwd = ["123", "456", "789"];
-  constructor(private router: Router) {  }
+  constructor(private router: Router, private data: DataService) {  }
 
 checkLogin(){
       for (var i = 0; i < this.emails.length; i++){
