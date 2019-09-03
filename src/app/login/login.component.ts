@@ -15,11 +15,13 @@ passwd = ["123", "456", "789"];
   constructor(private router: Router, private data: DataService) {  }
 
 checkLogin(){
-      for (var i = 0; i < this.emails.length; i++){
-        if( (this.UID == this.emails[i]) && (this.pwd == this.passwd[i])){
-          this.router.navigateByUrl("/account");
-        }
-      }
+  let test = this.data.getData(this.UID, this.pwd);
+  if(test){
+    this.router.navigateByUrl("/account");
+    localStorage.setItem("valid", "true");
+    localStorage.setItem("username", this.UID);
+  }
+  console.log(test);
     }
 
 

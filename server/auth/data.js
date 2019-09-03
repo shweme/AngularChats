@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-export function getLogin(email, pwd){
+export function getLogin(name, pwd){
     fs.readFile('../../server/auth/users.json', 'utf8', (err, fileContents) => {
         if(err){
             console.error(err);
@@ -10,7 +10,7 @@ export function getLogin(email, pwd){
             const data = JSON.parse(fileContents);
             console.log(data);
             for (let i =0; i < data.length ; i++){
-                if(email == data[i].email && pwd == data[i].pwd){
+                if(name == data[i].name && pwd == data[i].pwd){
                     return true;
                 }
                 else if (i == data.length-1 && pwd != data[i].pwd){
