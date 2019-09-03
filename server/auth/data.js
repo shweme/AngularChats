@@ -1,20 +1,20 @@
 const fs = require('fs');
 
-export function getLogin(name, pwd){
-    fs.readFile('../../server/auth/users.json', 'utf8', (err, fileContents) => {
+module.exports.getLogin = function getLogin(name, pwd){
+    return new Promise((resolve, reject) => {
+        fs.readFile('auth/users.json', 'utf8', (err, fileContents) => {
         if(err){
-            console.error(err);
-            return;
+            reject(err);
         }
         try {
             const data = JSON.parse(fileContents);
-            console.log(data);
+            //console.log(data);
             for (let i =0; i < data.length ; i++){
                 if(name == data[i].name && pwd == data[i].pwd){
-                    return true;
+                    resolve(true);
                 }
-                else if (i == data.length-1 && pwd != data[i].pwd){
-                    return false;
+                else if (i == data.length-1 && (pwd != data[i].pwd || name != data[i].name)){
+                    resolve(false);
                 }
                 else{
                     continue;
@@ -22,7 +22,11 @@ export function getLogin(name, pwd){
             }
         }
         catch(err) {
-            console.error(err);
+            reject(err);
         }
+
+        console.log()
     });
+    })
+    
 }

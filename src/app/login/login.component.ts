@@ -14,14 +14,14 @@ emails = ["Shweme", "Witchell", "Alien"];
 passwd = ["123", "456", "789"];
   constructor(private router: Router, private data: DataService) {  }
 
-checkLogin(){
-  let test = this.data.getData(this.UID, this.pwd);
-  if(test){
+async checkLogin(){
+  let verify = await this.data.getData(this.UID, this.pwd);
+  if(verify){
     this.router.navigateByUrl("/account");
     localStorage.setItem("valid", "true");
     localStorage.setItem("username", this.UID);
   }
-  console.log(test);
+  console.log(verify);
     }
 
 

@@ -5,5 +5,15 @@ body#AccPage{
     background-size:cover;
     padding:10px;
     color:#fff
-    
+}
+
+.nav.navbar-nav.navbar-default{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.nav-child{
+    padding:10px;
 }

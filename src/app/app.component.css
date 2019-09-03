@@ -1,5 +1,9 @@
-nav navbar-nav navbar-left{
-    background-image:url("../icon.png");
-    height:32px;
-    width:32px;
+.nav.navbar-nav.navbar-left{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.nav-child{
+    padding:10px;
 }
