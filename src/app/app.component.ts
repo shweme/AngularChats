@@ -10,6 +10,10 @@ export class AppComponent {
 
   constructor(private router: Router){}
 
+  isLoggedIn() {
+    return localStorage.getItem("valid") ? true : false;
+  }
+
   logOut(){
     localStorage.clear();
     this.router.navigateByUrl("/login");
