@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
-  constructor(http:HttpClientModule) { }
+  constructor( private http : HttpClient) { }
+
+  public getData(email:string, pwd:string): any {
+  }
 }

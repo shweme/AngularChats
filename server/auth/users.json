@@ -1,29 +1,26 @@
-{
-    "users":
+[
+        
     {
-        "0":
-        {
-            "name":"super",
-            "email":"null@void", 
-            "pwd":"Sup3r", 
-            "valid":"true", 
-            "isGroupAdmin":"SUPER"
-        },
-        "1":
-        {
-            "name":"shweme",
-            "email":"shmehta2111@gmail.com",
-            "pwd":"Shw3t@",
-            "valid":"false",
-            "isGroupAdmin":"GROUP"
-        },
-        "2":
-        {
-            "name":"neily",
-            "email":"neil@ashford.com",
-            "pwd":"@rtemis",
-            "valid":"false",
-            "isGroupAdmin":"FALSE"
-        }
+        "name":"super",
+        "email":"null@void", 
+        "pwd":"Sup3r", 
+        "valid":"true", 
+        "isGroupAdmin":"SUPER"
+    },
+    
+    {
+        "name":"shweme",
+        "email":"shmehta2111@gmail.com",
+        "pwd":"Shw3t@",
+        "valid":"false",
+        "isGroupAdmin":"GROUP"
+    },
+    
+    {
+        "name":"neily",
+        "email":"neil@ashford.com",
+        "pwd":"@rtemis",
+        "valid":"false",
+        "isGroupAdmin":"FALSE"
     }
-}
+]
