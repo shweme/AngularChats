@@ -1,5 +1,6 @@
-# Got Mail
+# Got Mail 
 ## 3813ICT Assignment 1
+## GIT REPOSITORY : https://github.com/shweme/AngularChats.git
 ### Git repository was initialised with code from week 4 lab (see link https://github.com/shweme/AngularLabs). commits were pushed during major milestones like html/css setup, bugs fixed, etc. All commits had appropriate commit messages.
 ### Data Structures:
 #### Server side uses JSON files to store user data such as :
