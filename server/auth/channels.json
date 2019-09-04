@@ -1,32 +1,32 @@
-{
-    "0":
+[
     {
+        "CID":"0",
         "name":"general",
         "group":"UQCS"
     },
-    "1":
     {
+        "CID":"1",
         "name":"food",
         "group":"UQCS"
     },
-    "2":
     {
+        "CID":"2",
         "name":"banter",
         "group":"UQCS"
     },
-    "3":
     {
+        "CID":"3",
         "name":"clayfieldwk3",
         "group":"CodeCampAU"
     },
-    "4":
     {
+        "CID":"4",
         "name":"general",
         "group":"CodeCampAU"
     },
-    "5":
     {
+        "CID":"5",
         "name":"general",
         "group":"ABA Design"
     }
-}
+]

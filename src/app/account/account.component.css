@@ -6,8 +6,8 @@
 }
 
 .grid-container{
+    grid-template-columns: 0.15fr 0.80fr;
     padding:10px;
-    color:#fff;
     display: flex;
     flex-direction:row;
 }
@@ -16,6 +16,7 @@
     align-items:center;
     display: flex;
     flex-direction:column;
+    color:#fff;
 }
 
 .nav.navbar-nav.navbar-default{
@@ -27,4 +28,10 @@
 
 .nav-child{
     padding:10px;
+}
+
+.
+
+a {
+    color:#000000;
 }

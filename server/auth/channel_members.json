@@ -1,0 +1,63 @@
+[
+    {
+        "group":"UQCS",
+        "channels":[
+        {
+            "CID":"0",
+            "members": [
+                "super",
+                "shweme",
+                "neily"
+            ]        
+        },
+        {
+            "CID":"1",
+            "members": [
+                "super",
+                "neily"
+            ]        
+        },
+        {
+            "CID":"2",
+            "members": [
+                "super",
+                "shweme",
+                "neily"
+            ]        
+        }
+    ]
+    },
+    {
+        "group":"CodeCampAU",
+        "channels": [
+        {
+            "CID":"3",
+            "members": [
+                "super",
+                "shweme",
+                "neily"
+            ]        
+        },
+        {
+            "CID":"4",
+            "members": [
+                "super",
+                "neily"
+            ]        
+        }
+        ]
+    },
+    {
+        "group":"ABA Design",
+        "channels": [
+        {
+            "CID":"5",
+            "members": [
+                "super",
+                "shweme"
+            ]        
+        }
+        ]
+    }
+]
+    

@@ -3,11 +3,12 @@
   <div class="container-fluid">
     <ul class="nav navbar-nav navbar-left">
       <img height=32 width=32 src="../icon.png">
-      <li> <a class="nav-child" routerLink="/login">GotMail</a></li>
+      <li> <a *ngIf="!isLoggedIn()" class="nav-child" routerLink="/login">GotMail</a></li>
+      <li> <a *ngIf="isLoggedIn()" class="nav-child" routerLink="/account">GotMail</a></li>
     </ul>
     
     <ul class="nav navbar-nav navbar-right">
-     <li> <a *ngIf= "isLoggedIn()" class="nav-link" (click)="logOut()" > Logout </a></li>
+     <li> <a *ngIf="isLoggedIn()" class="nav-link" (click)="logOut()" > Logout </a></li>
       </ul>
     </div>
 </nav>
