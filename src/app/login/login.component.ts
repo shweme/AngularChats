@@ -10,20 +10,35 @@ import { DataService } from '../data.service';
 export class LoginComponent implements OnInit {
 UID = "";
 pwd = "";
-emails = ["Shweme", "Witchell", "Alien"];
-passwd = ["123", "456", "789"];
+verify = true;
+//emails = ["Shweme", "Witchell", "Alien"];
+//passwd = ["123", "456", "789"];
   constructor(private router: Router, private data: DataService) {  }
 
+
 async checkLogin(){
-  let verify = await this.data.getData(this.UID, this.pwd);
-  if(verify){
+  this.verify = await this.data.getData(this.UID, this.pwd);
+  if(this.verify){
     this.router.navigateByUrl("/account");
     localStorage.setItem("valid", "true");
     localStorage.setItem("username", this.UID);
   }
-  console.log(verify);
+  console.log(this.verify);
     }
 
+/*
+A: arrive on page         /login    verify=false
+    not logged in
+    error not visible
+B: fail                   /login    verify=true
+    not logged in
+    error visible
+C: succeed                /account
+    logged in
+    error not visible
+
+    A --- B --- C
+*/
 
     ngOnInit() {
 

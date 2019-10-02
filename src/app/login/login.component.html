@@ -27,7 +27,7 @@
     </div>
     <div style="text-align:center" class="row">
         <div class="col-md-12">
-            <a href="/">Don't wanna log in?</a>
+            <p *ngIf="!verify">Username or password incorrect. Try again.</p>
         </div>
     </div>
 </div>
