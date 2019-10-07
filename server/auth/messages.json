@@ -1,51 +1,44 @@
-{
-    "0":
+[
     {
         "time":"12:42",
         "body":"sup",
-        "cID":"3",
-        "uID":"shweme"
+        "CID":"3",
+        "UID":"shweme"
     },
-    "1":
     {
         "time":"12:43",
         "body":"nm, u?",
-        "cID":"3",
-        "uID":"neily"
+        "CID":"3",
+        "UID":"neily"
     },
-    "2":
     {
         "time":"12:44",
         "body":"the ceiling lol",
-        "cID":"3",
-        "uID":"shweme"
+        "CID":"3",
+        "UID":"shweme"
     },
-    "3":
     {
         "time":"12:44",
         "body":"omg stfu",
-        "cID":"3",
-        "uID":"neily"
+        "CID":"3",
+        "UID":"neily"
     },
-    "4":
     {
         "time":"12:45",
         "body":"no u",
-        "cID":"3",
-        "uID":"shweme"
+        "CID":"3",
+        "UID":"shweme"
     },
-    "5":
     {
         "time":"12:45",
         "body":"why are u so weird",
-        "cID":"5",
-        "uID":"neily"
+        "CID":"5",
+        "UID":"neily"
     },
-    "6":
     {
         "time":"12:45",
         "body":" ¯\\_(ツ)_/¯",
-        "cID":"5",
-        "uID":"shweme"
+        "CID":"5",
+        "UID":"shweme"
     }
-}
+]

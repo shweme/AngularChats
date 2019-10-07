@@ -1,5 +1,6 @@
 module.exports = {
-    connect: function(io, PORT){
+    connect: function(io, PORT, db){
+        let messages = [];
         io.on('connection',(socket) => {
             console.log('user connection on port '+ PORT +' : '+ socket.id);
                 socket.on('message',(message)=>{

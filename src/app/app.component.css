@@ -7,3 +7,16 @@
 .nav-child{
     padding:10px;
 }
+
+.navbar {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font: bold;
+    font-size: 24px;
+    color: #FFF;
+    background-color: rgb(26, 23, 23);
+    width: 100%;
+}
+
+.nav-link:hover {
+    color: blue !important;
+}

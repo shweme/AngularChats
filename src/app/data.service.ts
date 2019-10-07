@@ -18,4 +18,15 @@ export class DataService {
       });
     });
   }
+
+
+  public userAcc(name:string): Promise<Object> {
+    return new Promise((res, rej) => {
+      this.http.post(`${SERVER_URL}/account`, {name}).subscribe( reso => {
+        console.log(reso);
+        res(reso as Object);
+      })
+    })
+  }
+
 }
