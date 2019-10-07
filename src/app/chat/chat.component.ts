@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Message } from '../mesage';
+import { SocketsService } from '../service/sockets.service';
 
 @Component({
   selector: 'app-chat',
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./chat.component.css']
 })
 export class ChatComponent implements OnInit {
+  messages: Message[] = [];
+  ioConnection: any;
+  messageData: string = "";
 
-  constructor() { }
+  constructor(private socketservice:SocketsService) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+    await this.socketservice.initSocket();
+    this.ioConnection = await this.socketservice.onMessage();
+
   }
 
 }

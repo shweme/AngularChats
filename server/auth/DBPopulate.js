@@ -5,6 +5,7 @@ module.exports.startup = async function startup(db){
     //
     const ucollection = db.collection("users");
     const user = await ucollection.find({ "name": "super" }).limit(1).toArray();
+    //drop collection when wanting to restart server
     //await ucollection.drop();
     if (user.length === 0) {
         await ucollection.insertMany([
@@ -30,8 +31,8 @@ module.exports.startup = async function startup(db){
                 "isGroupAdmin":"FALSE"
             }
         ]);
-
-        console.log(await ucollection.find({}).toArray())
+        //debug
+        //console.log(await ucollection.find({}).toArray())
     }
 
 
@@ -40,6 +41,8 @@ module.exports.startup = async function startup(db){
     //
     const gcollection = db.collection("groups");
     const group = await gcollection.find({ "id": 0 }).limit(1).toArray();
+    //drop collection when wanting to restart server
+    //await gcollection.drop();
     if (group.length === 0) {
         await gcollection.insertMany([
             {
@@ -59,8 +62,8 @@ module.exports.startup = async function startup(db){
                 "name":"ABA Design"
             }
         ]);
-
-        console.log(await gcollection.find({}).toArray())
+        // debug
+        // console.log(await gcollection.find({}).toArray())
     }
 
 
@@ -70,6 +73,8 @@ module.exports.startup = async function startup(db){
     //
     const chcollection = db.collection("channels");
     const channel = await chcollection.find({ "CID": 0 }).limit(1).toArray();
+    //drop collection when wanting to restart server
+    //await chcollection.drop();
     if (channel.length === 0) {
         await chcollection.insertMany([
             {
@@ -118,7 +123,9 @@ module.exports.startup = async function startup(db){
     //Populating all channels in all of gotmail's groups with channel members
     //
     const cmcollection = db.collection("channelMembers");
-    const chmember = await cmcollection.find({ "name": "super" }).toArray();
+    const chmember = await cmcollection.find({ "group" : "GotMail Support" }).toArray();
+    //drop collection when wanting to restart server
+    //await cmcollection.drop();
     if (chmember.length === 0) {
         await cmcollection.insertMany([
             {
@@ -201,8 +208,8 @@ module.exports.startup = async function startup(db){
                 ]
             }
         ]);
-
-        console.dir(await cmcollection.find({}).toArray(), { depth: 10 });
+        // debug
+        // console.dir(await cmcollection.find({}).toArray(), { depth: 10 });
     }
 
 
@@ -212,6 +219,8 @@ module.exports.startup = async function startup(db){
     //
     const mcollection = db.collection("messages");
     const msg = await mcollection.find({ "CID": "0" }).limit(1).toArray();
+    //drop collection when wanting to restart server
+    //await mcollection.drop();
     if (msg.length === 0) {
         await mcollection.insertMany([
             {
@@ -263,8 +272,8 @@ module.exports.startup = async function startup(db){
                 "UID":"shweme"
             }
         ]);
-
-        console.log(await mcollection.find({}).toArray())
+        //debug
+        //console.log(await mcollection.find({}).toArray())
     }
 
 }

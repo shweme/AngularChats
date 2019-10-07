@@ -33,7 +33,8 @@ client.connect("mongodb://localhost:27017", { useUnifiedTopology: true, useNewUr
 
     app.post("/login", async function (request, response) {
         try {
-            console.log(request.body);
+            //debug
+            //console.log(request.body);
             const { name, pwd } = request.body;
             const succeeded = await getLogin(name, pwd, db);
             if (succeeded) {
@@ -49,7 +50,8 @@ client.connect("mongodb://localhost:27017", { useUnifiedTopology: true, useNewUr
 
     app.post("/account", async function(req, res) {
         try {
-            console.log(req.body);
+            //debug
+            //console.log(req.body);
             const {name} = req.body;
             const userData = await userAcc(name, db);
             res.json(userData);
