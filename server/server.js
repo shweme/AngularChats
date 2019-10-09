@@ -95,10 +95,11 @@ client.connect("mongodb://localhost:27017", { useUnifiedTopology: true, useNewUr
             //console.log("server sees:",req.body);
             const { CID } = req.body;
             const msgList = await messages(CID, db);
-            if (messages === '' ) {
+            console.log(msgList);
+            if (msgList === '' ) {
                 res.json("Error - No Data Retrieved");
             } else {
-                res.json(messages);
+                res.json(msgList);
             }
         } catch (err) {
             console.warn(err);

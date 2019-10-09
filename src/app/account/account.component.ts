@@ -12,12 +12,16 @@ export class AccountComponent implements OnInit {
 
 	email="";
 	username = localStorage.getItem("username");
+	valid = false;
 	
 	userData: any;
 	groupList: any;
 	channelList: any;
 
 	async ngOnInit() {
+
+		//checking whether user is logged in 
+		this.valid = await this.data.validateUser();
 
 		//fetching user data to display
 		this.userData = await this.data.userAcc(this.username); 

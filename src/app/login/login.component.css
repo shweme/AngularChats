@@ -1,14 +1,14 @@
-body#LoginForm{
-    background-image:url("../../sky.jpg");
-    background-repeat:no-repeat;
-    background-position:center;
-    background-size:cover;
+#LoginForm{
     padding:10px;
 }
+
 .simple-login-container{
     width:300px;
     max-width:100%;
     margin:50px auto;
+    background-color: rgb(26, 23, 23);
+    padding: 1.5rem;
+    box-sizing: content-box;
 }
 .simple-login-container h2{
     text-align:center;

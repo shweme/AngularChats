@@ -18,5 +18,7 @@
 }
 
 .nav-link:hover {
-    color: blue !important;
+    color: rgb(0, 81, 255) !important;
+    text-decoration: underline;
+    text-decoration-color: rgb(0, 81, 255);
 }

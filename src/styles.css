@@ -4,6 +4,7 @@ a {
 }
 
 .bg {
+    background-image: url("sky.jpg");
     background-color: rgb(26, 23, 23);
     position: absolute;
     top: 0;

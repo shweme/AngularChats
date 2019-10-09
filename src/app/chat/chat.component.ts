@@ -12,6 +12,7 @@ export class ChatComponent implements OnInit {
   messageData: string = '';
   name = localStorage.getItem('username');
   valid = false;
+  channelChat = false;
 
   msgList:any;
 	groupList:any;
@@ -23,11 +24,12 @@ export class ChatComponent implements OnInit {
   async messageList(CID){
     this.msgList = await this.data.messages(CID);
     localStorage.setItem('channelID', CID);
+    this.channelChat = true;
   }
 //
   async sendChat(){
     if(this.messageData){
-      const today = new Date;
+      const today = new Date();
       const time = today.getHours() + ":" + today.getMinutes();
       const CID = parseInt(localStorage.getItem('channelID'));
 
@@ -43,22 +45,20 @@ export class ChatComponent implements OnInit {
 
 
   async ngOnInit() {
-    //await 
-    //this.ioConnection = await this.socketservice.onMessage();
 
     this.valid = this.data.validateUser();
     if (this.valid){
       this.socket.initSocket();
       this.ioConnection = await this.socket.onMessage().subscribe((message:any) => {
-        if (message.CID == parseInt(localStorage.getItem('channelID'))){
+        if (message.CID === parseInt(localStorage.getItem('channelID'))){
           this.msgList.push(message);
         }
       });
 
-      //fetching all groups that user is part of to display in chat sidebar
+      // fetching all groups that user is part of to display in chat sidebar
       this.groupList = await this.data.groupData();
 
-      //fetching all channels that user is part of to display in chat sidebar
+      // fetching all channels that user is part of to display in chat sidebar
       this.channelList = await this.data.channelData(this.name);
       console.log(this.channelList);
     }
