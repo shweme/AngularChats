@@ -11,6 +11,7 @@
         </div>
     </div>
     <div class="grid-container groups">
+        <h1 style="color:white">{{ username }}'s groups:</h1>
         <a class="glist" *ngFor="let group of groupList" style="font-family:Georgia; font-size:24px; color:white;">
             {{group.name}}
             <div class="clist" *ngFor="let channel of channelList">
