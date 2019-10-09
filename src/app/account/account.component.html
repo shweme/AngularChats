@@ -11,12 +11,12 @@
         </div>
     </div>
     <div class="grid-container groups">
-        <div class="glist" *ngFor="let group of groupList" style="font-size:24px; color:white;">
+        <a class="glist" *ngFor="let group of groupList" style="font-family:Georgia; font-size:24px; color:white;">
             {{group.name}}
             <div class="clist" *ngFor="let channel of channelList">
-                <div style="font-size:18px;" *ngIf="channel.group==group.name">{{channel.name}}</div>
+                <div style="font-family:Georgia; font-size:18px;" *ngIf="channel.group==group.name">{{channel.name}}</div>
             </div>    
-        </div>
+        </a>
     </div>
 </div>
 

@@ -3,6 +3,7 @@
     background-repeat:no-repeat;
     background-position:center;
     background-size:cover;
+    grid-template-columns: 0.4fr 5.5fr;
 }
 
 .grid-container{
@@ -10,9 +11,12 @@
     padding:10px;
     display: flex;
     flex-direction:row;
+    font-family: Georgia;
 }
 
 .sidebar{
+    grid-column-start: 1;
+    grid-column-end: 1;
     align-items:center;
     display: flex;
     flex-direction:column;
@@ -31,16 +35,16 @@
 }
 
 .groups {
+    background-size: cover;
     background: #454545;
+    display: flex;
+    flex-direction: grid;
+    width: 100%;
 }
 
 .glist{
-    display: -webkit-flex;
-    flex-direction: inherit;
-    
+    flex-direction: grid;
 }
 
 .clist{
-    display: flex;
-    flex-direction: row;
 }

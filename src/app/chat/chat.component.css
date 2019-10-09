@@ -34,7 +34,7 @@ body {
     grid-column-start: 1;
     grid-column-end: 1;
     grid-row-start: 2;
-    grid-row-end: 4;
+    grid-row-end: 5;
     background: rgb(0, 0, 0);
     background-image:url("../../sky.jpg");
     background-size: cover;
@@ -44,6 +44,7 @@ body {
   .main {
     grid-column-start: 2;
     grid-row-start: 2;
+    grid-row-end: 4;
     background-image:url("../../sky.jpg");
     overflow-y: auto;
     margin-left: 10px;
@@ -51,7 +52,7 @@ body {
 
   .textbox{
     grid-column-start: 2;
-    grid-row-start: 3;
+    grid-row-start: 4;
     background-image:url("../../sky.jpg");
     overflow-y: auto;
     margin-left: 10px;
