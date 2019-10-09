@@ -30,8 +30,17 @@
     padding:10px;
 }
 
-.
+.groups {
+    background: #454545;
+}
 
-a {
-    color:#000000;
+.glist{
+    display: -webkit-flex;
+    flex-direction: inherit;
+    
+}
+
+.clist{
+    display: flex;
+    flex-direction: row;
 }

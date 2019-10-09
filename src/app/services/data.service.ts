@@ -21,12 +21,29 @@ export class DataService {
 
 
   public userAcc(name:string): Promise<Object> {
-    return new Promise((res, rej) => {
-      this.http.post(`${SERVER_URL}/account`, {name}).subscribe( reso => {
-        console.log(reso);
-        res(reso as Object);
-      })
-    })
+    return new Promise((resolve, reject) => {
+      this.http.post(`${SERVER_URL}/account`, {name}).subscribe( res => {
+        console.log(res);
+        resolve(res as Object);
+      });
+    });
   }
 
+  public groupData(): Promise<Object> {
+    return new Promise((resolve, reject) => {
+      this.http.post(`${SERVER_URL}/group`, {}).subscribe(res => {
+        console.log(res);
+        resolve(res as Object);
+      });
+    });
+  }
+
+  public channelData(name:string): Promise<Object> {
+    return new Promise((resolve, reject) => {
+      this.http.post(`${SERVER_URL}/channel`, {name}).subscribe( res => {
+        console.dir(res);
+        resolve(res as Object);
+      });
+    });
+  }
 }

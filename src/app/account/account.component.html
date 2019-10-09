@@ -10,13 +10,16 @@
             </ul>
         </div>
     </div>
-    <div class="grid-container group">
-            <ul class="list-group">
-                <li><a class="list-group-item">A</a></li>
-                <li><a class="list-group-item">A</a></li>
-                <li><a class="list-group-item">A</a></li>
-                <li><a class="list-group-item">A</a></li>
-            </ul>
-            
+    <div class="grid-container groups">
+        <div class="glist" *ngFor="let group of groupList" style="font-size:24px; color:white;">
+            {{group.name}}
+            <div class="clist" *ngFor="let channel of channelList">
+                <div style="font-size:18px;" *ngIf="channel.group==group.name">{{channel.name}}</div>
+            </div>    
+        </div>
     </div>
 </div>
+
+<router-outlet></router-outlet>
+
+<!--{{groupList.name}}, {{channel.name}}-->

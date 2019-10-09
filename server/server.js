@@ -11,8 +11,7 @@ const client = mongo.MongoClient;
 
 
 const { startup } = require('./auth/DBPopulate')
-const { getLogin } = require('./auth/data');
-const { userAcc } = require('./auth/data')
+const { getLogin, userAcc, groupData, channelData } = require('./auth/data');
 
 
 
@@ -58,6 +57,36 @@ client.connect("mongodb://localhost:27017", { useUnifiedTopology: true, useNewUr
         } catch (err) {
             console.warn(err);
             response.status(500).json("Something went wrong with user data retrieval");
+        }
+    });
+
+
+    app.post("/group", async function(req, res) {
+        try {
+            const gData = await groupData(db);
+            res.json(gData);
+        } catch (err) {
+            console.warn(err);
+            response.status(500).json("Something went wrong with group data retrieval");
+        }
+    });
+
+    app.post("/channel", async function(req, res) {
+        try {
+            //debug
+            //console.log(req.body);
+            const {name} = req.body;
+            const cData = await channelData(name, db);
+            res.json(cData);
+
+            // if(cData === ''){
+            //     res.json("Error - No Data Retrieved");
+            // } else {
+            //     res.json(cData);
+            // }
+        } catch (err) {
+            console.warn(err);
+            response.status(500).json("Something went wrong with channel data retrieval");
         }
     });
 
