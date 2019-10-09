@@ -26,7 +26,7 @@ client.connect("mongodb://localhost:27017", { useUnifiedTopology: true, useNewUr
     //create collections and populate database gotmail
     await startup(db);
 
-    sockets.connect(io, PORT);
+    sockets.connect(io, db);
 
 
 

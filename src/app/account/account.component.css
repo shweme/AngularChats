@@ -1,5 +1,4 @@
 .has-bg{
-    background-image:url("../../sky.jpg");
     background-repeat:no-repeat;
     background-position:center;
     background-size:cover;
@@ -40,6 +39,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    padding: 0.5rem;
 }
 
 .glist{

@@ -1,11 +1,15 @@
 <div class="grid-container">
     <div class="grid-element header">
-        <a class="nav-link" routerLink="/account">Account</a>
-        <a *ngIf="channelChat">{{channelList.name}}</a>
+        <a class="nav-link" routerLink="/account">Profile</a>
+        <div class="chatName" *ngIf="channelChat">
+            <a>{{gname}} - </a>
+            <a>{{cname}}</a>
+        </div>
+        
     </div>
     <div class="grid-element sidebar">
         <div class="grid-element channels">
-            <div *ngFor="let group of groupList" style="font-size:24px; font-family: Georgia;">
+            <div *ngFor="let group of groupList" style="font-size:22px; font-family: Georgia;">
                 {{group.name}}
                 <div *ngFor="let channel of channelList" style="background-color: rgb(26, 23, 25)">
                     <button (click)="messageList(channel.CID)" *ngIf="channel.group==group.name" class="btn btn-primary" style="background-color:transparent; border-color:transparent;">{{channel.name}}</button>
@@ -15,18 +19,18 @@
     </div>
     <div class="grid-element main">
         <div *ngFor="let msg of msgList" class="msg-bubble">
-            <div *ngIf="msg.UID===name" style="text-align:right; color:rgb(141, 25, 25); font-family:'Courier New', Courier, monospace;">You</div>
-            <div *ngIf="msg.UID===name" style="text-align:right; font-family:'Courier New', Courier, monospace;" >{{msg.body}}</div>
+            <div *ngIf="msg.UID===name" style="text-align:right; color:rgb(141, 25, 25); font-family:'Courier New', Courier, monospace; font-size:14px;">You</div>
+            <div *ngIf="msg.UID===name" style="text-align:right; font-family:'Courier New', Courier, monospace; font-size:18px;">{{msg.body}}</div>
 
-            <div *ngIf="msg.UID!==name" style="text-align:left; color:lime; font-family:'Courier New', Courier, monospace;">{{msg.UID}}</div>
-            <div *ngIf="msg.UID!==name" style="text-align:left; font-family:'Courier New', Courier, monospace;" >{{msg.body}}</div>
+            <div *ngIf="msg.UID!==name" style="text-align:left; color:lime; font-family:'Courier New', Courier, monospace; font-size:14px;">{{msg.UID}}</div>
+            <div *ngIf="msg.UID!==name" style="text-align:left; font-family:'Courier New', Courier, monospace; font-size:18px;">{{msg.body}}</div>
         </div>
     </div>
     <div class="grid-element textbox">
         <form class="input-field">
             <!--Take the input of the chat, post it to the channel
                 Something with observers and subscribing here very likely-->
-            <span><input placeholder="Type here to Chat" type="text" class="textbox" [(ngModel)]="chatmessage" name="chatmessage" autocomplete="off" style="width:80%; background-color: rgb(26, 23, 25); color:white;"></span>
+            <span><input placeholder="Type here to Chat" type="text" class="textbox" [(ngModel)]="messageData" name="messageData" autocomplete="off" style="width:80%; background-color: rgb(26, 23, 25); color:white;"></span>
             <button class="btn btn-primary chatbutton" (click)="sendChat()" type="submit">Post</button>
         </form>
     </div>

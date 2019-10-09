@@ -28,6 +28,10 @@ body {
     grid-row-end: 2;
     background: rgb(0, 0, 0);
     background-image:url("../../sky.jpg");
+    display: flex;
+    flex-direction: row;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 28px;
   }
   
   .sidebar {
@@ -46,16 +50,20 @@ body {
     text-decoration: underline;
     text-decoration-color: rgb(0, 81, 255);
 }
+
+  .chatName {
+    flex:1; 
+    text-align:center;
+  }
   
   .main {
-    grid-column-start: 2;
-    grid-row-start: 2;
-    grid-row-end: 4;
     background-image:url("../../sky.jpg");
     overflow-y: auto;
     margin-left: 10px;
     display:grid;
     grid-gap: 0.5rem;
+    grid-auto-rows: min-content;
+    height: 100%;
   }
 
   .textbox{
@@ -75,5 +83,4 @@ body {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     border-radius: 0.6rem;
-    border-bottom-left-radius: 0;
   }

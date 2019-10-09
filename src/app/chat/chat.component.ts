@@ -13,6 +13,8 @@ export class ChatComponent implements OnInit {
   name = localStorage.getItem('username');
   valid = false;
   channelChat = false;
+  cname = "";
+  gname = '';
 
   msgList:any;
 	groupList:any;
@@ -25,6 +27,14 @@ export class ChatComponent implements OnInit {
     this.msgList = await this.data.messages(CID);
     localStorage.setItem('channelID', CID);
     this.channelChat = true;
+    for( let i = 0; i < this.channelList.length; i++){
+      if (this.channelList[i].CID === CID){
+        this.cname = this.channelList[i].name;
+        this.gname = this.channelList[i].group;
+        console.log(this.channelList[i].name);
+      } 
+    }
+    
   }
 //
   async sendChat(){
@@ -33,7 +43,7 @@ export class ChatComponent implements OnInit {
       const time = today.getHours() + ":" + today.getMinutes();
       const CID = parseInt(localStorage.getItem('channelID'));
 
-      const msg = { time: time, user: this.name, body: this.messageData, CID: CID };
+      const msg = { time: time, UID: this.name, body: this.messageData, CID: CID };
       //send typed message for socket service to deal with
       this.socket.chat(msg);
 
