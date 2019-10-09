@@ -36,9 +36,9 @@
 
 .groups {
     background-size: cover;
-    background: #454545;
+    background: rgb(26, 23, 23);
     display: flex;
-    flex-direction: grid;
+    flex-direction: column;
     width: 100%;
 }
 

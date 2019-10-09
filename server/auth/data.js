@@ -64,3 +64,15 @@ module.exports.channelData = async function channelData(name, db) {
 
 
 //Message history retrieval
+module.exports.messages = async function messages(CID, db){
+	try {
+		const mcollection = db.collection("messages");
+		const msg = await mcollection.find({ "CID":CID }).toArray();
+		//console.log("Message Data Retrieved");
+		//console.log(message)
+		return msg;
+	} catch (err) {
+		console.warn(err)
+		response.status(500).json("FAILED: Message retrieval")
+	}
+}

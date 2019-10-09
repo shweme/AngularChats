@@ -11,7 +11,7 @@ const client = mongo.MongoClient;
 
 
 const { startup } = require('./auth/DBPopulate')
-const { getLogin, userAcc, groupData, channelData } = require('./auth/data');
+const { getLogin, userAcc, groupData, channelData, messages } = require('./auth/data');
 
 
 
@@ -89,6 +89,22 @@ client.connect("mongodb://localhost:27017", { useUnifiedTopology: true, useNewUr
             response.status(500).json("Something went wrong with channel data retrieval");
         }
     });
+
+    app.post("/messages", async function (req, res) {
+        try {
+            //console.log("server sees:",req.body);
+            const { CID } = req.body;
+            const msgList = await messages(CID, db);
+            if (messages === '' ) {
+                res.json("Error - No Data Retrieved");
+            } else {
+                res.json(messages);
+            }
+        } catch (err) {
+            console.warn(err);
+            res.status(500).json("Something went wrong with message retrieval");
+        }
+    })
 
 
 });

@@ -10,6 +10,7 @@ module.exports.startup = async function startup(db){
     //drop collection when wanting to restart server
     if(user.length > 0 && drop === true){
         await ucollection.drop();
+        console.log("dropped database collections");
     }
     else if (user.length === 0 && drop ===false) {
         await ucollection.insertMany([
@@ -228,5 +229,5 @@ module.exports.startup = async function startup(db){
         //debug
         //console.log(await mcollection.find({}).toArray())
     }
-
+    console.log("Populated databse gotmail");
 }

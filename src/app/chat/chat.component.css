@@ -57,3 +57,7 @@ body {
     overflow-y: auto;
     margin-left: 10px;
   }
+  .chatbutton {
+    width: 15%;
+    float: right;
+  }
