@@ -1,5 +1,5 @@
 # Got Mail 
-## 3813ICT Assignment 1
+## 3813ICT Assignment
 ## GIT REPOSITORY : https://github.com/shweme/AngularChats.git
 #### This document aims to provide an insight into the software development practices exercised during the development of the Gotmail chat system. Also included is the structure and main system variables to be aware of. This documentation does not provide any code examples, however, a link to the Github repository of the developer has been embedded.
 #### GITHUB REPOSITORY LINK: https://github.com/shweme/AngularChats.git
@@ -12,13 +12,13 @@
 #### •	Groups collection: contains a list of all groups that have been created, their group ID and the name of the group.
 #### •	Channels collection: contains a list of not just each channel that exists in a group, but also all the members in that channel. A single entry in the channels table will look something like this:
 ##### 	[{"CID":0,
-######    "name":"general",
-######     "group":"GotMail Support",
-######     "owner": "super",
-######     "members":["super","shweme"]
-######  }]
+#####    "name":"general",
+#####     "group":"GotMail Support",
+#####     "owner": "super",
+#####     "members":["super","shweme"]
+#####  }]
 ##### Where CID is the channel’s unique identifier, name is the channel’s name, group indicates which group it belongs to (can only be one). Owner indicates the owner of the channel, and members is a list of all current members.
-##### •	Messages collection: Contains a list of all the messages that have been sent through the system. Each “message” has a time it was sent, a body containing the text that was sent, a CID to differentiate what channel it was sent in, and UID to indicate who sent the message.
+#### •	Messages collection: Contains a list of all the messages that have been sent through the system. Each “message” has a time it was sent, a body containing the text that was sent, a CID to differentiate what channel it was sent in, and UID to indicate who sent the message.
 
 ### RESTful API:
 #### The communication of data between server and client side of the Gotmail chat system is done using REST API design over HTTP protocol. HTTP routes were created which directed client-side relaying of information to appropriate server-side routes listening for such relays. The routes present in the Gotmail chat system are:
