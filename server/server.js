@@ -58,7 +58,7 @@ client.connect("mongodb://localhost:27017", { useUnifiedTopology: true, useNewUr
             console.warn(err);
             response.status(500).json("Something went wrong with user data retrieval");
         }
-    });
+    }); 
 
 
     app.post("/group", async function(req, res) {

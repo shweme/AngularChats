@@ -8,6 +8,10 @@ import { SocketsService } from '../services/sockets.service';
   styleUrls: ['./chat.component.css']
 })
 export class ChatComponent implements OnInit {
+
+  ////////////////////
+  //Global variables//
+  ////////////////////
   ioConnection: any;
   messageData: string = '';
   name = localStorage.getItem('username');
@@ -16,9 +20,9 @@ export class ChatComponent implements OnInit {
   cname = "";
   gname = '';
 
-  msgList:any;
-	groupList:any;
-  channelList:any;
+  msgList:any; //will contain list of all messages
+	groupList:any; //will contain list of all groups
+  channelList:any; //will contain list of all channels user is in
   
   constructor(private socket:SocketsService, private data:DataService) { }
 
@@ -26,7 +30,8 @@ export class ChatComponent implements OnInit {
   async messageList(CID){
     this.msgList = await this.data.messages(CID);
     localStorage.setItem('channelID', CID);
-    this.channelChat = true;
+    this.channelChat = true; //allowing group and channels names to be displayed
+    //finding current channel name
     for( let i = 0; i < this.channelList.length; i++){
       if (this.channelList[i].CID === CID){
         this.cname = this.channelList[i].name;
@@ -36,7 +41,8 @@ export class ChatComponent implements OnInit {
     }
     
   }
-//
+
+//emitting massage typed in chat textbox
   async sendChat(){
     if(this.messageData){
       const today = new Date();
@@ -55,10 +61,11 @@ export class ChatComponent implements OnInit {
 
 
   async ngOnInit() {
-
+    //performing validation check to see if user is logged in 
     this.valid = this.data.validateUser();
     if (this.valid){
       this.socket.initSocket();
+      //if user is validly logged in, listens for messages being sent or received to update chat
       this.ioConnection = await this.socket.onMessage().subscribe((message:any) => {
         if (message.CID === parseInt(localStorage.getItem('channelID'))){
           this.msgList.push(message);

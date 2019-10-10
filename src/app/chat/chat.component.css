@@ -59,11 +59,13 @@ body {
   .main {
     background-image:url("../../sky.jpg");
     overflow-y: auto;
+    grid-column-start: 2;
+    grid-row-start: 2;
+    grid-row-end: 4;
     margin-left: 10px;
     display:grid;
     grid-gap: 0.5rem;
     grid-auto-rows: min-content;
-    height: 100%;
   }
 
   .textbox{
